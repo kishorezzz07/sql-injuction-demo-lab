@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧑‍💻 Welcome, <span id="userName">User</span></h1>
+    <h2>Your Database Record:</h2>
+    <pre id="userData"></pre>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!user) {
+      alert("No user data found. Redirecting to login.");
+      window.location.href = "index.html";
+    } else {
+      document.getElementById("userName").textContent = user.username;
+      document.getElementById("userData").textContent = JSON.stringify(user, null, 2);
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
