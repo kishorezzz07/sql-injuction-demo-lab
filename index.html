@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL Injection Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔓 SQL Injection Demo Lab</h1>
+    <p class="sub">Simulated login to demonstrate SQL Injection</p>
+
+    <div class="toggle-mode">
+      <label>
+        <input type="checkbox" id="secureToggle" /> Secure Mode
+      </label>
+    </div>
+
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="output">
+      <h2>Simulated SQL Query:</h2>
+      <pre id="sqlQuery"></pre>
+      <h2>Result:</h2>
+      <pre id="result"></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
